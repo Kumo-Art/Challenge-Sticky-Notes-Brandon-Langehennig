@@ -31,9 +31,8 @@ const charCount = document.getElementById("char-count");
 const newNote = localStorage.getItem("sticky-note") || "";
 
 note.value = newNote;
-
-
-
+//this is our input ------> note.value = newNote; // <----- this calls variable with sticky-note
+ //^^^^^^^^^^^^^^^^^^^^^^^^^^the whole expression sets input equal to our value in sticky-note^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 // ---------------------------------------------------------------------
 // ✏️ TASK 2 · Save on EVERY keystroke
 // ---------------------------------------------------------------------
