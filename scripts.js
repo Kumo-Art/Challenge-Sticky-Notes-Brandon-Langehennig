@@ -27,12 +27,12 @@ const charCount = document.getElementById("char-count");
 // Read "sticky-note" from localStorage and put it in note.value.
 // 💡 Hint: on the first visit there's nothing saved (null).
 //          Add || "" so the note doesn't literally say "null".
-function showNote() {
+
 const newNote = localStorage.getItem("sticky-note") || "";
 
-note.textContent = newNote;
+note.value = newNote;
 
-}
+
 
 // ---------------------------------------------------------------------
 // ✏️ TASK 2 · Save on EVERY keystroke
@@ -42,8 +42,8 @@ note.textContent = newNote;
 
 note.addEventListener("input", function () {
     localStorage.setItem("sticky-note",note.value);
-    note.textContent = "";
-    showNote();
+    
+    
 });
 
 
@@ -53,11 +53,11 @@ note.addEventListener("input", function () {
 // ---------------------------------------------------------------------
 // On click: remove "sticky-note" from localStorage AND empty note.value.
      clearBtn.addEventListener("click", function () {
-        let nte = "";
+        note.value = "";
         
         localStorage.removeItem("sticky-note");
 
-        note.textContent = nte;
+        
 
      });
 
