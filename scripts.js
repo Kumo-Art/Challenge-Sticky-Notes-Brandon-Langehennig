@@ -42,6 +42,8 @@ note.textContent = newNote;
 
 note.addEventListener("input", function () {
     localStorage.setItem("sticky-note",note.value);
+    note.textContent = "";
+    showNote();
 });
 
 
@@ -51,11 +53,11 @@ note.addEventListener("input", function () {
 // ---------------------------------------------------------------------
 // On click: remove "sticky-note" from localStorage AND empty note.value.
      clearBtn.addEventListener("click", function () {
-        newNote = "";
+        let nte = "";
         
         localStorage.removeItem("sticky-note");
 
-        note.textContent = newNote;
+        note.textContent = nte;
 
      });
 
